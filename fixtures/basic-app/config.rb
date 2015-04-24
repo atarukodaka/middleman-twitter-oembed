@@ -1,0 +1,1 @@
+activate :twitter_oembed

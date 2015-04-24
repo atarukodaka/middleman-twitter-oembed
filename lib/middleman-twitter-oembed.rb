@@ -1,6 +1,7 @@
 require "middleman-twitter-oembed/version"
 
-module Middleman
-  module TwitterOembed
-  end
+::Middleman::Extensions.register(:twitter_oembed) do
+  require 'middleman-twitter-oembed/extension'
+  ::Middleman::TwitterOembed::Extension
 end
+
