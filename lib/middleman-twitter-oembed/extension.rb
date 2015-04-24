@@ -5,7 +5,7 @@ module Middleman
   module TwitterOembed
     class Extension < Middleman::Extension
       option :enable_convert, true
-      option :convert_regex, %r{https?://twitter.com/[a-zA-Z0-9_]+/status/(\d+)}
+      option :convert_regex, %r{^https?://twitter.com/[a-zA-Z0-9_]+/status/(\d+)$}
       option :omit_script, false
       option :use_cache, true
       option :cache_dir, ".caches/twitter_oembed"

@@ -1,8 +1,7 @@
-# Middleman::Twitter::Oembed
+## Middleman::TwitterOembed
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/middleman/twitter/oembed`. To experiment with that code, run `bin/console` for an interactive prompt.
+[to write]
 
-TODO: Delete this and the text above, and describe your gem
 
 ## Installation
 
@@ -22,7 +21,41 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+in config.rb:
+
+    activate :twitter_oembed
+
+### convert before rendering
+
+on default, twitter url(like 'http://twitter.com/foo/123456789') will be converted to twitter box before rendering.
+
+You can change the regex to match:
+
+```ruby
+activate :twitter_oembed do |twitter|
+  twitter.convert_regex = %r{\[\[twitter: *(\d+)\]\]}
+end
+```
+
+If you don't want to convert, set false for enable_convert option:
+
+```ruby
+activate :twitter_oembed do |twitter|
+  twitter.enable_convert = false
+end
+```
+
+### helper
+
+in *.erb:
+
+```
+<%= twitter_oembed('123456789') %>
+
+or
+
+<%= twitter_oembed_by_url('http://twitter.com/foo/status/123456789') %>
+```
 
 ## Development
 
@@ -32,7 +65,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/middleman-twitter-oembed/fork )
+1. Fork it ( https://github.com/atarukodaka/middleman-twitter-oembed/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

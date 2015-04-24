@@ -6,7 +6,9 @@ Feature: basic
       """
       ---
       ---
+      foo
       http://twitter.com/ataru_kodaka/status/591598644421242880
+      bar
       """
     And the Server is running at "basic-app"
     When I go to "/index.html"
@@ -15,6 +17,25 @@ Feature: basic
       """
       <script async src="//platform.twitter.com/widgets.js" charset="utf-8">
       """
+
+  Scenario: non-convert
+    Given a fixture app "basic-app"
+    And a file named "source/index.html.erb" with:
+      """
+      ---
+      ---
+      foo
+       http://twitter.com/ataru_kodaka/status/591598644421242880 
+      bar
+      """
+    And the Server is running at "basic-app"
+    When I go to "/index.html"
+    Then I should not see "test"
+    And I should not see:
+      """
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8">
+      """
+    And I should see " http://twitter.com/ataru_kodaka/status/591598644421242880 "
 
 
   Scenario: helper by id
