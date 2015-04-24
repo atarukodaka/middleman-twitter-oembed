@@ -6,7 +6,7 @@
 
 ## Middleman::TwitterOembed
 
-[to write]
+An extension to render and/or convert twitter stauts id into e-Embed status.
 
 
 ## Installation
