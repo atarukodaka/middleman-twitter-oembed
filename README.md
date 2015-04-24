@@ -1,3 +1,9 @@
+[![Gem Version](https://badge.fury.io/rb/middleman-twitter-oembed.svg)](http://badge.fury.io/rb/middleman-twitter-oembed)
+[![Build Status](https://travis-ci.org/atarukodaka/middleman-twitter-oembed.svg)](https://travis-ci.org/atarukodaka/middleman-twitter-oembed)
+[![Coverage Status](https://coveralls.io/repos/atarukodaka/middleman-twitter-oembed/badge.svg)](https://coveralls.io/r/atarukodaka/middleman-twitter-oembed)
+[![Code Climate](https://codeclimate.com/github/atarukodaka/middleman-twitter-oembed/badges/gpa.svg)](https://codeclimate.com/github/atarukodaka/middleman-twitter-oembed)
+
+
 ## Middleman::TwitterOembed
 
 [to write]
