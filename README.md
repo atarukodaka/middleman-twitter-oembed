@@ -6,8 +6,8 @@
 
 ## Middleman::TwitterOembed
 
-An extension to render and/or convert twitter stauts id into e-Embed status.
-
+An extension to render and/or convert twitter stauts id into o-Embed status.
+see https://dev.twitter.com/rest/reference/get/statuses/oembed for detail of twitter o-Embed.
 
 ## Installation
 
@@ -33,7 +33,7 @@ in config.rb:
 
 ### convert before rendering
 
-on default, twitter url(like 'http://twitter.com/foo/123456789') will be converted to twitter box before rendering.
+on default, twitter url(like 'http://twitter.com/foo/status/123456789') will be converted to twitter box before rendering.
 
 You can change the regex to match:
 
@@ -61,6 +61,17 @@ in *.erb:
 or
 
 <%= twitter_oembed_by_url('http://twitter.com/foo/status/123456789') %>
+```
+
+### caching
+
+in default, the result of oEmbed will be cached.
+
+```ruby
+activate :twitter_oembed do |twitter|
+  twitter.use_cache = true
+  twitter.cache_dir = ".caches/twitter-oembed"
+end
 ```
 
 ## Development
